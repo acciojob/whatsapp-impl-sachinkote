@@ -79,7 +79,7 @@ public class WhatsappRepository {
 			 List<Message> l1=groupMessageMap.get(group);
 			 l1.add(message);
 			 groupMessageMap.put(group, l1);
-			 return l1.size();
+			 return l1.size()+1;
 		}
 	}
 

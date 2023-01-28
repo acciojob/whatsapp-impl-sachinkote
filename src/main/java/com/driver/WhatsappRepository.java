@@ -64,7 +64,7 @@ public class WhatsappRepository {
 	public int sendMessage(Message message, User sender, Group group) throws Exception {
 		// TODO Auto-generated method stub
 		List<User> l=groupUserMap.get(group);
-		if(! groupMessageMap.containsKey(group)) {
+		if(!groupMessageMap.containsKey(group)) {
 			throw new Exception("Group does not exist");
 		}
 		
@@ -85,7 +85,7 @@ public class WhatsappRepository {
 
 	public String changeAdmin(User approver, User user, Group group) throws Exception {
 		// TODO Auto-generated method stub
-		if(! groupMessageMap.containsKey(group)) {
+		if(!groupMessageMap.containsKey(group)) {
 			throw new Exception("Group does not exist");
 		}
 		else if(!adminMap.containsKey(approver))

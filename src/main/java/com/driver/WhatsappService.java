@@ -1,7 +1,8 @@
 package com.driver;
 
-import java.util.List;
 import java.util.Date;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -28,18 +29,33 @@ public class WhatsappService {
 		return repo.createMessage(content);
 	}
 
-	public int sendMessage(Message message, User sender, Group group) throws Exception {
+	public int sendMessage(Message message, User sender, Group group)  {
 		// TODO Auto-generated method stub
 		
-			return repo.sendMessage(message,sender, group);
+			try {
+				return repo.sendMessage(message,sender, group);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return 0;
+			}
+			
 		
 		
 	}
 
-	public String changeAdmin(User approver, User user, Group group) throws Exception {
+	public String changeAdmin(User approver, User user, Group group)  {
 		// TODO Auto-generated method stub
-		return repo.changeAdmin(approver, user,group);
+		try {
+			return repo.changeAdmin(approver, user,group);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
+
 	public int removeUser(User user) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -49,6 +65,8 @@ public class WhatsappService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 	
 }

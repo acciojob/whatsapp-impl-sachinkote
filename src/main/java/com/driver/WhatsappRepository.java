@@ -42,7 +42,7 @@ public class WhatsappRepository {
 		Group group=new Group();
 		if(users.size()>2)
 		{   customGroupCount++;
-			group.setName("Group"+customGroupCount);
+			group.setName("Group "+customGroupCount);
 			group.setNumberOfParticipants(users.size());
 		}
 		else
@@ -63,12 +63,13 @@ public class WhatsappRepository {
 
 	public int sendMessage(Message message, User sender, Group group) throws Exception {
 		// TODO Auto-generated method stub
+		List<User> l=groupUserMap.get(group);
 		if(! groupMessageMap.containsKey(group)) {
 			throw new Exception("Group does not exist");
 		}
 		
-		List<User> l=groupUserMap.get(group);
-		if(!l.contains(sender))
+		
+		else if(!l.contains(sender))
 		{
 			throw new Exception("You are not allowed to send message");
 		}
@@ -87,11 +88,11 @@ public class WhatsappRepository {
 		if(! groupMessageMap.containsKey(group)) {
 			throw new Exception("Group does not exist");
 		}
-		if(!adminMap.containsKey(approver))
+		else if(!adminMap.containsKey(approver))
 		{
 			throw new Exception("Approver does not have rights");
 		}
-		if(!groupUserMap.get(group).contains(user))
+		else if(!groupUserMap.get(group).contains(user))
 		{
 			throw new Exception("User is not a participant");
 		}

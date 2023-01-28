@@ -40,6 +40,15 @@ public class WhatsappService {
 		// TODO Auto-generated method stub
 		return repo.changeAdmin(approver, user,group);
 	}
+	public int removeUser(User user) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public String findMessage(Date start, Date end, int k) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	
 }

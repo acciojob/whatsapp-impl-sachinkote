@@ -34,7 +34,7 @@ public class WhatsappRepository {
 		    return "SUCCESS";
 		}
 		else
-			return("User already exists");
+		  return"User already exists";
 	}
 
 	public Group createGroup(List<User> users) {
@@ -71,7 +71,7 @@ public class WhatsappRepository {
 		
 		else if(!l.contains(sender))
 		{
-			throw new Exception("You are not allowed to send message");
+			throw new Exception("Group does not exist");
 		}
 		else
 			
@@ -90,11 +90,11 @@ public class WhatsappRepository {
 		}
 		else if(!adminMap.containsKey(approver))
 		{
-			throw new Exception("Approver does not have rights");
+			throw new Exception("Group does not exist");
 		}
 		else if(!groupUserMap.get(group).contains(user))
 		{
-			throw new Exception("User is not a participant");
+			throw new Exception("Group does not exist");
 		}
 		else
 		{

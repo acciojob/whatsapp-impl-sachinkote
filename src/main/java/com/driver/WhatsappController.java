@@ -23,11 +23,17 @@ public class WhatsappController {
     WhatsappService whatsappService = new WhatsappService();
 
     @PostMapping("/add-user")
-    public String createUser(String name, String mobile) throws Exception {
+    public String createUser(String name, String mobile)  {
         //If the mobile number exists in database, throw "User already exists" exception
         //Otherwise, create the user and return "SUCCESS"
         
-        return whatsappService.createUser(name, mobile);
+         try {
+			return whatsappService.createUser(name, mobile);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
         
        
     }

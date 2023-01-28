@@ -9,11 +9,11 @@ public class Message {
 	public Message() {
 		super();
 	}
-	public Message(int id, String content, Date timestamp) {
+	public Message(int id, String content) {
 		super();
 		this.id = id;
 		this.content = content;
-		this.timestamp = timestamp;
+		this.timestamp =null;
 	}
 	public int getId() {
 		return id;

@@ -37,7 +37,7 @@ public class WhatsappService {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				return 0;
+				return 1;
 			}
 			
 		
@@ -51,7 +51,7 @@ public class WhatsappService {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return null;
+			return "SUCCESS";
 		}
 		
 	}
